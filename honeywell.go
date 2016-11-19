@@ -86,7 +86,6 @@ func (t *thermostat) Connect(ctx context.Context, login, password string) error 
 		return fmt.Errorf("invalid respose code: %d", resp.StatusCode)
 	}
 
-	fmt.Printf("%+v\n", resp.Cookies())
 	t.auth = &Auth{cookies: resp.Cookies()}
 	return nil
 }
